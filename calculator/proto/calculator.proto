@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/grzegab/gRPC/calculator/proto";
+
+message OperationRequest {
+  string operation = 1;
+  float num1 = 2;
+  float num2 = 3;
+}
+
+message OperationResponse {
+  float num = 1;
+}
+
+service CalcOperation {
+  rpc Operation(OperationRequest) returns (stream OperationResponse);
+}
