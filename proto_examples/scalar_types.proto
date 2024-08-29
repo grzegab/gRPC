@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package proto_examples;
+
+message scalar {
+  bool boolean = 1; // default: false
+  string text = 2; // arbitrary length, default: "", UTF-8 or 7-bit ASCII
+  bytes byte_seq = 3; //default empty bytes
+}
+
+/*
+  Simple example of message for proto
+ */
+message scalar_example {
+  uint32 id = 1;
+  string name = 2;
+  bytes thumbnail = 3; // picture in .jpeg format
+  bool is_verified = 4;
+  float height = 5; // in cm
+  string dob = 6;
+  double x = 7;
+  double y = 8;
+  string currency = 9;
+  int64 price = 10;
+  repeated string names = 11;
+}

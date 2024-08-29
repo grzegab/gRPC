@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package proto_examples;
+
+message MessageOne {
+  int32 id = 1;
+}
+
+enum HairColor {
+    HAIR_COLOR_UNSPECIFIED = 0;
+    HAIR_COLOR_LIGHT = 1;
+    HAIR_COLOR_DARK = 2;
+}
+
+message Two {
+  MessageOne message = 1;
+  HairColor color = 2;
+}
+
+message Three {
+  message Four {
+    ///...
+  }
+
+  enum Xyz {
+    XYZ_UNSPECIFIED = 0;
+  }
+
+  uint32 id = 1;
+  Four messageFour = 2;
+  Xyz enumOne = 3;
+}

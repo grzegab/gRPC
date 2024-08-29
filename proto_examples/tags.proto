@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proto_examples;
+
+// smallest tag 1
+// largest tag 536_870_911
+// reserved tags: 19_000 19_999
+
+
+// numbers 1 - 15: 1 byte, really important
+// numbers 16-2047: 2 bytes, less important
+message tags {
+  int32 small = 1;
+  int32 big = 536870911;
+}

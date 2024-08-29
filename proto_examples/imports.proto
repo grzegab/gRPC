@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package proto_examples;
+
+import "proto_examples/nested.proto";
+
+message MessageFive {
+  int32 id = 1;
+  proto_examples.MessageOne otherMessage = 2;
+}
