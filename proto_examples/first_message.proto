@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto_examples;
 
-message example {
+message Example {
   uint64 id = 1;
   string name = 2;
   bool male = 3;
