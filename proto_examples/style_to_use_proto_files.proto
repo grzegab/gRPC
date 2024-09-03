@@ -1,0 +1,26 @@
+/* License Header */
+syntax = "proto3";
+
+package mypackage;
+
+//import alfabetaically
+import "a.proto";
+import "b.proto";
+import "c.proto";
+
+option go_package = "github.com/grzegab/proto_examples";
+
+enum FooBar {
+  FOO_BARR_UNSPECIFIED = 0; //always unspecified at 0
+  FOO_BAR_FIRST = 1;
+  FOO_BAR_SECOND = 2;
+}
+
+message Message {
+  FooBar a_simple_thing = 1;
+  repeated string multiple_strings = 2;
+}
+
+service FooService {
+  rpc ListOrDoSth(google.protobuf.Empty) returns (Message);
+}

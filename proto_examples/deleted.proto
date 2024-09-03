@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package proto_examples;
+
+message Example {
+  uint64 id = 1;
+  string name = 2;
+  bool male = 3;
+}
+
+ //deleted male from Example
+message ExampleDeleted {
+  reserved 3;
+  reserved "male";
+
+  uint64 id = 1;
+  string name = 2;
+}
+
+message LongExample {
+  uint32 id = 1;
+  string phone = 2;
+}
+
+message LongExampleDeleted {
+  reserved 2, 4 to 8, 11;
+  reserved "first_name", "last_name", "phone";
+
+  uint32 id = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package proto_examples;
+
+// No bussiness value
+// e.g. name = Invalid
+
+// Use in switch statements
+
+message Default {
+  uint64 id = 1;
+  string first_name = 2;
+}

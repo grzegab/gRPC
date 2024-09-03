@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package proto_examples;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+// RTFM:
+// options and descriptions: https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto
+
+message Address {
+
+}
+
+message AdvancedExample {
+  oneof phone_or_email { // Cannot be repeated
+    string phone = 1;
+    string email = 2;
+  }
+
+  map<string, Address> addresses = 3; // cannot be repeated, no float, no double, no enum as key
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Duration validity = 5; // other available:
+}

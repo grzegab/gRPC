@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto_examples;
+
+
+
+message ExampleInt {
+  int32 id1 = 1; // -2mln;+2mln
+  int64 id2 = 2; // -96mld;+96mld
+  uint32 nonNegative32 = 3;
+  uint64 nonNegative64 = 4;
+  sint32 bestSerializingNegative32Bit = 5;
+  sint64 bestSerializingNegative64Bit = 6;
+
+  //fixed size
+  fixed32 f1 = 7; // always 4 bytes
+  sfixed32 f2 = 8; // always 4 bytes
+  fixed64 f3 = 9;// always 8 bytes
+  sfixed64 f4 = 10;// always 8 bytes
+}
